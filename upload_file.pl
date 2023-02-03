@@ -11,9 +11,12 @@ my $dir = './uploads';
 app->asset->process(
   # virtual name of the asset
   "dropzone" => (
+    "dz.js",
     'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js',
     'https://unpkg.com/dropzone@5/dist/min/dropzone.min.js',
     'https://unpkg.com/dropzone@5/dist/min/dropzone.min.css',
+    'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css',
+    'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js',
   ),
 );
 
@@ -77,12 +80,8 @@ __DATA__
     <title><%= title %></title>
   </head>
   <body><%= content %>
-    <div id='myDropZone'>
+    <div id='myDropZone' class="dropzone bp-3 bg-info bg-opacity-10 border border-1 border-info border-start-0 rounded-end">
     <div class="dz-message" data-dz-message><span>upload file</span></div>
-    <form action="/upload" class="dropzone" id="my-awesome-dropzone" method="post">
-
-    <button type="submit">Submit data and files!</button>
-    </form>
     </div>
   </body>
 </html>
