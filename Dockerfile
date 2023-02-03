@@ -11,8 +11,7 @@ RUN apt install build-essential -y --no-install-recommends
 RUN cpanm --force URI::Fetch Net::Server Carton Starman
 
 RUN cachebuster=b953b35 git clone https://github.com/DragosTrif/Dropzone-and-Mojolicious-Lite-Perl-.git
-RUN cd Dropzone-and-Mojolicious-Lite-Perl- && cpanm -L local JavaScript::Minifier::XS; 
-RUN mkdir uploads && carton install --deployment
+RUN cd Dropzone-and-Mojolicious-Lite-Perl- && cpanm -L local JavaScript::Minifier::XS && mkdir uploads && carton install --deployment
 
 EXPOSE 8080
 
